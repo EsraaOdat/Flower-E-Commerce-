@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Edit Product</h2>
+        <form id="editProductForm" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="productName">Product Name</label>
+                <input type="text" class="form-control" id="productName" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" name="description" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" class="form-control" id="price" name="price" required>
+            </div>
+            <div class="form-group">
+                <label for="priceWithDiscount">Price with Discount</label>
+                <input type="number" class="form-control" id="priceWithDiscount" name="priceWithDiscount">
+            </div>
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select class="form-control" id="category" name="categoryId" required>
+                    <!-- Categories will be populated here dynamically -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="color">Color</label>
+                <select class="form-control" id="color" name="color" required>
+                    <option value="">Select a Color</option>
+                    <option value="1">Red</option>
+                    <option value="2">White</option>
+                    <option value="3">Pink</option>
+                    <option value="4">Yellow</option>
+                    <option value="5">Mixed</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="productImage">Product Image</label>
+                <input type="file" class="form-control-file" id="productImage" name="image">
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const productId = localStorage.getItem('productId');
+            if (!productId) {
+                alert('No product ID provided.');
+                return;
+            }
+
+            // Fetch product details and populate form
+            fetch(`https://localhost:7000/api/Products/${productId}`)
+            .then(response => response.json())
+            .then(product => {
+                document.getElementById('productName').value = product.name;
+                document.getElementById('description').value = product.description;
+                document.getElementById('price').value = product.price;
+                document.getElementById('priceWithDiscount').value = product.priceWithDiscount || '';
+                document.getElementById('category').value = product.categoryId;
+                document.getElementById('color').value = product.colorId; // Assuming 'colorId' is part of the fetched product details
+            })
+            .catch(error => console.error('Error fetching product details:', error));
+
+            // Fetch categories and populate the category select
+            fetch('https://localhost:7000/api/Categories')
+            .then(response => response.json())
+            .then(categories => {
+                const categorySelect = document.getElementById('category');
+                categories.forEach(category => {
+                    const option = document.createElement('option');
+                    option.value = category.categoryId;
+                    option.textContent = category.name;
+                    categorySelect.appendChild(option);
+                });
+            })
+            .catch(error => console.error('Error fetching categories:', error));
+
+            // Handle form submission
+            document.getElementById('editProductForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const formData = new FormData(this);
+
+                fetch(`https://localhost:7000/api/Products/${productId}`, {
+                    method: 'PUT',
+                    body: formData
+                })
+                .then(response => {
+                    if (!response.ok) throw new Error('Failed to update');
+                    return response.json();
+                })
+                .then(data => {
+                    alert('Product updated successfully!');
+                })
+                .catch(error => {
+                    console.error('Error updating product:', error);
+                    alert('Failed to update product: ' + error.message);
+                });
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

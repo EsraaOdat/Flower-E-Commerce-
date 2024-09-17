@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from codescandy.com/geeks-bootstrap-5/pages/dashboard/ecommerce/order-single.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Sep 2024 16:29:49 GMT -->
+
+<head> <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Codescandy">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8S4MT3EYG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-M8S4MT3EYG');
+    </script>
+
+
+
+    <script>
+        // Render blocking JS:
+        if (localStorage.theme) document.documentElement.setAttribute("data-theme", localStorage.theme);
+    </script>
+
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon"
+        href="https://codescandy.com/geeks-bootstrap-5/assets/images/favicon/favicon.ico">
+
+
+    <!-- Libs CSS -->
+    <link href="../../../assets/fonts/feather/feather.css" rel="stylesheet">
+    <link href="../../../assets/libs/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="../../../assets/libs/%40mdi/font/css/materialdesignicons.min.css" rel="stylesheet" />
+    <link href="../../../assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet">
+
+
+
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="../../../assets/css/theme.min.css">
+    <title>Order Single | Geeks - Academy Admin Template</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+    <!-- Wrapper -->
+    <div id="db-wrapper">
+        <!-- navbar vertical -->
+        <!-- Sidebar -->
+        <!-- navbar vertical -->
+        <nav class="navbar-vertical navbar">
+            <div class="vh-100" data-simplebar>
+                <!-- Brand logo -->
+                <a class="navbar-brand" href="https://codescandy.com/geeks-bootstrap-5/index.html">
+                    <img src="https://codescandy.com/geeks-bootstrap-5/assets/images/brand/logo/logo-inverse.svg"
+                        alt="">
+                </a>
+                <!-- Navbar nav -->
+                <ul class="navbar-nav flex-column" id="sideNavbar">
+
+
+
+
+                    <!-- Nav item User -->
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="Users.html">
+                            <i class="fas fa-user" style="font-size:24px"></i>
+                            </i> User
+                        </a>
+
+                    </li>
+
+
+
+
+
+                    <!-- Nav item Orders -->
+                    <li class="nav-item">
+                        <a class="nav-link " href="order.html">
+                            <i class='fas fa-receipt' style='font-size:24px'></i>
+                            </i> &nbsp; &nbsp;Orders
+
+                        </a>
+                    </li>
+
+
+
+
+
+
+
+                    <!-- Nav item Categories -->
+
+                    <li class="nav-item">
+                        <a class="nav-link   collapsed " href="#" data-bs-toggle="collapse"
+                            data-bs-target="#navDashboard" aria-expanded="false" aria-controls="navDashboard">
+                            <i class="fas fa-th-large" style="font-size:24px"></i>
+                            &nbsp; Categories
+                        </a>
+                        <div id="navDashboard" class="collapse " data-bs-parent="#sideNavbar">
+                            <ul class="nav flex-column">
+                                <li class="nav-item ">
+                                    <a class="nav-link " href="Categories_Bassam/addCategory.html">
+                                        Add Category
+                                    </a>
+                                </li>
+                                <!-- Nav item -->
+                                <li class="nav-item ">
+                                    <a class="nav-link " href="Categories_Bassam/addCategory.html">
+                                        View ALL Categories
+
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+
+
+
+
+
+                    <!-- Nav item Products -->
+
+                    <li class="nav-item">
+                        <a class="nav-link   collapsed " href="#" data-bs-toggle="collapse"
+                            data-bs-target="#navDashboard" aria-expanded="false" aria-controls="navDashboard">
+                            <i class="fas fa-box" style="font-size:24px"></i>
+                            &nbsp; Products
+                        </a>
+                        <div id="navDashboard" class="collapse " data-bs-parent="#sideNavbar">
+                            <ul class="nav flex-column">
+                                <li class="nav-item ">
+                                    <a class="nav-link " href="Categories_Bassam/Add-product.html">
+                                        Add Products
+                                    </a>
+                                </li>
+                                <!-- Nav item -->
+                                <li class="nav-item ">
+                                    <a class="nav-link " href="admin-products.html">
+                                        View ALL Products
+
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+
+
+                    <!-- Nav item Comment -->
+                    <li class="nav-item">
+                        <a class="nav-link " href="Comment.html">
+                            <i class="fas fa-comment" style="font-size:24px"></i>
+
+                            </i> &nbsp; &nbsp;Comments
+
+                        </a>
+                    </li>
+                    <!-- Nav item Contact Us -->
+                    <li class="nav-item">
+                        <a class="nav-link " href="contact.html">
+                            <i class="fas fa-comment" style="font-size:24px"></i>
+
+                            </i> &nbsp; &nbsp;Contact Us
+
+                        </a>
+                    </li>
+
+
+                    <!-- Nav item Coupons -->
+                    <li class="nav-item">
+                        <a class="nav-link " href="Coupon Management.html">
+                            <i class="fas fa-tags" style="font-size:24px"></i>
+                            &nbsp; Coupons
+
+                        </a>
+                    </li>
+
+
+
+                    <!-- Nav item  Chat-->
+                    <li class="nav-item">
+                        <a class="nav-link " href="chat.html">
+                            <i class="nav-icon fe fe-message-square me-2"></i> Chat
+        
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+
+        </nav>
+        <!-- Page Content -->
+        <main id="page-content">
+            <div class="header">
+                <!-- navbar -->
+                <nav class="navbar-default navbar navbar-expand-lg">
+                    <a id="nav-toggle" href="#">
+                        <i class="fe fe-menu"></i>
+                    </a>
+                    <div class="ms-lg-3 d-none d-md-none d-lg-block">
+                        <!-- Form -->
+                        <form class="d-flex align-items-center">
+                            <span class="position-absolute ps-3 search-icon">
+                                <i class="fe fe-search"></i>
+                            </span>
+                            <input type="search" class="form-control ps-6" placeholder="Search Entire Dashboard">
+                        </form>
+                    </div>
+                    <!--Navbar nav -->
+                    <div class="ms-auto d-flex">
+                        <a href="#" class="form-check form-switch theme-switch btn btn-light btn-icon rounded-circle ">
+                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                            <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+
+                        </a>
+                        <ul class="navbar-nav navbar-right-wrap ms-2 d-flex nav-top-wrap">
+                            <li class="dropdown stopevent">
+                                <a class="btn btn-light btn-icon rounded-circle indicator indicator-primary text-muted"
+                                    href="#" role="button" id="dropdownNotification" data-bs-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <i class="fe fe-bell"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-lg"
+                                    aria-labelledby="dropdownNotification">
+                                    <div>
+                                        <div
+                                            class="border-bottom px-3 pb-3 d-flex justify-content-between align-items-center">
+                                            <span class="h4 mb-0">Notifications</span>
+                                            <a href="# " class="text-muted">
+                                                <span class="align-middle">
+                                                    <i class="fe fe-settings me-1"></i>
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <!-- List group -->
+                                        <ul class="list-group list-group-flush" data-simplebar
+                                            style="max-height: 300px;">
+                                            <li class="list-group-item bg-light">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <a class="text-body" href="#">
+                                                            <div class="d-flex">
+                                                                <img src="../../../assets/images/avatar/avatar-1.jpg"
+                                                                    alt="" class="avatar-md rounded-circle">
+                                                                <div class="ms-3">
+                                                                    <h5 class="fw-bold mb-1">Kristin Watson:</h5>
+                                                                    <p class="mb-3">
+                                                                        Krisitn Watsan like your comment on course
+                                                                        Javascript Introduction!
+                                                                    </p>
+                                                                    <span class="fs-6 text-muted">
+                                                                        <span><span
+                                                                                class="fe fe-thumbs-up text-success me-1"></span>2
+                                                                            hours ago,</span>
+                                                                        <span class="ms-1">2:19 PM</span>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-auto text-center me-2">
+                                                        <a href="#" class="badge-dot bg-info" data-bs-toggle="tooltip"
+                                                            data-bs-placement="top" title="Mark as read">
+                                                        </a>
+                                                        <div>
+                                                            <a href="#" class="bg-transparent" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Remove">
+                                                                <i class="fe fe-x text-muted"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <a class="text-body" href="#">
+                                                            <div class="d-flex">
+                                                                <img src="../../../assets/images/avatar/avatar-2.jpg"
+                                                                    alt="" class="avatar-md rounded-circle">
+                                                                <div class="ms-3">
+                                                                    <h5 class="fw-bold mb-1">Brooklyn Simmons</h5>
+                                                                    <p class="mb-3">
+                                                                        Just launched a new Courses React for Beginner.
+                                                                    </p>
+                                                                    <span class="fs-6 text-muted">
+                                                                        <span><span
+                                                                                class="fe fe-thumbs-up text-success me-1"></span>Oct
+                                                                            9,</span>
+                                                                        <span class="ms-1">1:20 PM</span>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-auto text-center me-2">
+                                                        <a href="#" class="badge-dot bg-secondary"
+                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Mark as unread">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <a class="text-body" href="#">
+                                                            <div class="d-flex">
+                                                                <img src="../../../assets/images/avatar/avatar-3.jpg"
+                                                                    alt="" class="avatar-md rounded-circle">
+                                                                <div class="ms-3">
+                                                                    <h5 class="fw-bold mb-1">Jenny Wilson</h5>
+                                                                    <p class="mb-3">
+                                                                        Krisitn Watsan like your comment on course
+                                                                        Javascript Introduction!
+                                                                    </p>
+                                                                    <span class="fs-6 text-muted">
+                                                                        <span><span
+                                                                                class="fe fe-thumbs-up text-info me-1"></span>Oct
+                                                                            9,</span>
+                                                                        <span class="ms-1">1:56 PM</span>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-auto text-center me-2">
+                                                        <a href="#" class="badge-dot bg-secondary"
+                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Mark as unread">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <a class="text-body" href="#">
+                                                            <div class="d-flex">
+                                                                <img src="../../../assets/images/avatar/avatar-4.jpg"
+                                                                    alt="" class="avatar-md rounded-circle">
+                                                                <div class="ms-3">
+                                                                    <h5 class="fw-bold mb-1">Sina Ray</h5>
+                                                                    <p class="mb-3">
+                                                                        You earn new certificate for complete the
+                                                                        Javascript
+                                                                        Beginner course.
+                                                                    </p>
+                                                                    <span class="fs-6 text-muted">
+                                                                        <span><span
+                                                                                class="fe fe-award text-warning me-1"></span>Oct
+                                                                            9,</span>
+                                                                        <span class="ms-1">1:56 PM</span>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-auto text-center me-2">
+                                                        <a href="#" class="badge-dot bg-secondary"
+                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Mark as unread">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class="border-top px-3 pt-3 pb-0">
+                                            <a href="https://codescandy.com/geeks-bootstrap-5/pages/notification-history.html"
+                                                class="text-link fw-semibold">
+                                                See all Notifications
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- List -->
+                            <li class="dropdown ms-2">
+                                <a class="rounded-circle" href="#" role="button" id="dropdownUser"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div class="avatar avatar-md avatar-indicators avatar-online">
+                                        <img alt="avatar" src="../../../assets/images/avatar/avatar-1.jpg"
+                                            class="rounded-circle">
+                                    </div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownUser">
+                                    <div class="dropdown-item">
+                                        <div class="d-flex">
+                                            <div class="avatar avatar-md avatar-indicators avatar-online">
+                                                <img alt="avatar" src="../../../assets/images/avatar/avatar-1.jpg"
+                                                    class="rounded-circle">
+                                            </div>
+                                            <div class="ms-3 lh-1">
+                                                <h5 class="mb-1">Annette Black</h5>
+                                                <p class="mb-0 text-muted">annette@geeksui.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <ul class="list-unstyled">
+                                        <li class="dropdown-submenu dropstart-lg">
+                                            <a class="dropdown-item dropdown-list-group-item dropdown-toggle" href="#">
+                                                <i class="fe fe-circle me-2"></i> Status
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <span class="badge-dot bg-success me-2"></span> Online
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <span class="badge-dot bg-secondary me-2"></span> Offline
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <span class="badge-dot bg-warning me-2"></span> Away
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <span class="badge-dot bg-danger me-2"></span> Busy
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item"
+                                                href="https://codescandy.com/geeks-bootstrap-5/pages/profile-edit.html">
+                                                <i class="fe fe-user me-2"></i> Profile
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item"
+                                                href="https://codescandy.com/geeks-bootstrap-5/pages/student-subscriptions.html">
+                                                <i class="fe fe-star me-2"></i> Subscription
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <i class="fe fe-settings me-2"></i> Settings
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="dropdown-divider"></div>
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <a class="dropdown-item"
+                                                href="https://codescandy.com/geeks-bootstrap-5/index.html">
+                                                <i class="fe fe-power me-2"></i> Sign Out
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                </nav>
+            </div>
+            <!-- Container fluid -->
+            <section class="container-fluid p-4">
+                <div class="row ">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <!-- Page header -->
+                        <div class="border-bottom pb-3 mb-3">
+                            <div class="mb-2 mb-lg-0">
+                                <h1 class="mb-0 h2 fw-bold">Order Single </h1>
+                                <!-- Breadcrumb -->
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item">
+                                            <a href="admin-dashboard.html">Dashboard</a>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <a href="#">Ecommerce </a>
+                                        </li>
+                                        <li class="breadcrumb-item active" aria-current="page">
+                                            Order Single
+                                        </li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <DIV ID="CONTANT"></DIV>
+            </section>
+        </main>
+
+    </div>
+
+
+    <!-- Scripts -->
+    <!-- Libs JS -->
+    <script src="../../../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../../../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/libs/simplebar/dist/simplebar.min.js"></script>
+
+
+    <!-- Theme JS -->
+    <script src="../../../assets/js/theme.min.js"></script>
+
+
+
+
+</body>
+
+<script>
+
+    async function getData() {
+        const orderId = localStorage.getItem("orderId");
+
+        const url = `https://localhost:7000/api/Orders/GetOrderDetails/${orderId}`;
+
+
+        const response = await fetch(url);
+
+
+        let data = await response.json();
+        console.log('API Response:', data);
+        let order = Array.isArray(data) ? data[0] : data;
+
+        if (order) {
+            let cards = document.getElementById("CONTANT");
+            cards.innerHTML = `
+                   
+      <div class="row">
+  <div class="col-xl-8 col-lg-7 col-12">
+    <!-- Order card -->
+    <div class="card">
+      <!-- Order card header -->
+      <div class="card-header border-bottom-0">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <!-- heading -->
+            <h4 class="mb-1">Order ID: ${order.orderId}</h4>
+<span>Order Date: ${order.date} <span id="order-status-${order.orderId}" class="badge bg-success-soft ms-2">${order.status}</span></span>
+             <!-- Add the change status section here -->
+              <div >
+                <div>
+                  
+                </div>
+              </div>
+              <!-- End of change status section -->
+          </div>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <!-- Table -->
+        <table class="table mb-0 text-nowrap">
+          <!-- Table Head -->
+          <thead class="table-light">
+            <tr>
+              <th>Products</th>
+              <th>Items</th>
+              <th>Amounts</th>
+            </tr>
+          </thead>
+          <!-- tbody -->
+          <tbody id="productTable">
+            <!-- Products will be inserted here -->
+          </tbody>
+          <tfoot>
+            <tr>
+              <td class="border-bottom-0 pb-0"></td>
+              <td colspan="1" class="fw-medium text-dark border-bottom-0 pb-0">
+                <!-- text -->
+                Sub Total :
+              </td>
+              <td class="fw-medium text-dark border-bottom-0 pb-0 text-end">
+                <!-- text -->
+                $${order.totalAmount}
+              </td>
+            </tr>
+            <tr>
+              <td class="border-bottom-0 pb-0"></td>
+              <td colspan="1" class="fw-medium text-dark border-bottom-0 pb-0">
+                <!-- text -->
+                Discount (${order.coupon.name}) :
+              </td>
+              <td class="fw-medium text-dark border-bottom-0 pb-0 text-end">
+                <!-- text -->
+                - $${order.coupon.amount}
+              </td>
+            </tr>
+            <tr>
+              <td class="border-bottom-0 pb-0"></td>
+              <td colspan="1" class="fw-medium text-dark border-bottom-0 pb-0">
+                <!-- text -->
+                Shipping Charge :
+              </td>
+              <td class="fw-medium text-dark border-bottom-0 pb-0 text-end">
+                <!-- text -->
+                $15.00
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td colspan="1" class="fw-semibold text-dark">
+                <!-- text -->
+                Paid by Customer
+              </td>
+              <td class="fw-semibold text-dark text-end">
+                <!-- text -->
+                $${parseInt(order.totalAmount) - parseInt(order.coupon.amount) + 15}
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-4 col-lg-5 col-12">
+    <!-- Customer card -->
+    <div class="card mb-4 mt-4 mt-lg-0">
+      <!-- Customer card body -->
+      <div class="card-body">
+        <!-- heading -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h4 class="mb-0">Customer</h4>
+        </div>
+        <div class="d-flex align-items-center">
+          <!-- img -->
+          <img src="../../../../../../../../Back-End/E-Commerce/E-Commerce/Images${order.customer.image}" class="avatar-lg rounded-circle" alt="">
+          <div class="ms-3">
+            <!-- title -->
+            <h4 class="mb-0">${order.customer.name}</h4>
+          </div>
+        </div>
+      </div>
+      <!-- card body -->
+      <div class="card-body border-top">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <!-- text -->
+          <h4 class="mb-0">Contact</h4>
+        </div>
+        <div>
+          <!-- text -->
+          <div class="d-flex align-items-center mb-2"><i class="fe fe-mail text-muted fs-4"></i><a href="#" class="ms-2">${order.customer.email}</a></div>
+          <div class="d-flex align-items-center"><i class="fe fe-phone text-muted fs-4"></i><span class="ms-2">${order.customer.phoneNumber}</span></div>
+        </div>
+                                    </div>
+                                     <!-- Change Order Status Section -->
+                                <div class="card-body border-top">
+                                    <div class="d-flex align-items-center mt-4">
+                                        <div class="me-2">
+                                            <h5 class="mb-2">Change Order Status</h5>
+                                            <select class="form-select" id="orderStatusSelect">
+                                        <option value="Pending" ${order.status === 'Pending' ? 'selected' : ''}>Pending</option>
+                                        <option value="Processing" ${order.status === 'Processing' ? 'selected' : ''}>Processing</option>
+                                        <option value="Shipped" ${order.status === 'Shipped' ? 'selected' : ''}>Shipped</option>
+                                        <option value="Delivered" ${order.status === 'Delivered' ? 'selected' : ''}>Delivered</option>
+                                        <option value="Canceled" ${order.status === 'Canceled' ? 'selected' : ''}>Canceled</option>
+                                    </select>
+                                        </div>
+                                    <button onclick="UpdateStatus(${order.orderId})" class="btn btn-primary mt-3">
+                                        Update Status
+                                    </button>
+                                    </div>
+                                </div>
+                                </div>
+
+                               
+                            </div>
+                        </div>
+                    </div>
+
+                `;
+        }
+
+        // Insert products into the table using a for loop
+        let productTable = document.getElementById("productTable");
+        order.orderItems.forEach(item => {
+            productTable.innerHTML += `
+                <tr>
+                    <td>
+                        <a href="#" class="text-inherit">
+                            <div class="d-lg-flex">
+                                <div>
+    <img src="../../../../../../../../Back-End/E-Commerce/E-Commerce/Images/${item.productImage}" alt="${item.productName}" class="img-4by3-md rounded">
+                                </div>
+                                <div class="ms-lg-4 mt-2 mt-lg-0">
+                                    <h5 class="mb-0">${item.productName}</h5>
+                                    <span class="text-body">SKU: ${item.productId}</span>
+                                </div>
+                            </div>
+                        </a>
+                    </td>
+                    <td>${item.quantity}</td>
+                    <td>$${item.price * item.quantity}</td>
+                </tr>
+            `;
+        });
+    }
+
+    // Call the function to get and display the data
+    getData();
+    async function UpdateStatus(orderId) {
+    const newStatus = document.getElementById("orderStatusSelect").value;
+
+    const url = `https://localhost:7000/api/Orders/UpdateOrderStatus/${orderId}`;
+    const updatedData = { status: newStatus };
+
+    try {
+        const response = await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(updatedData)
+        });
+
+        if (response.ok) {
+            alert('Order status updated successfully!');
+            document.getElementById(`order-status-${orderId}`).innerText = newStatus;
+        } else {
+            const errorData = await response.json();
+            console.error('Error:', errorData);
+            alert('Failed to update the order status.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('An unexpected error occurred.');
+    }
+}
+
+</script>
+
+
+</html>

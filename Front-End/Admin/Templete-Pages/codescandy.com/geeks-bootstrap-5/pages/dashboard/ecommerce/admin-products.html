@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Products</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://codescandy.com/geeks-bootstrap-5/assets/css/theme.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <style>
+        #db-wrapper {
+            display: flex;
+            min-height: 100vh;
+        }
+        .navbar-vertical {
+            width: 250px;
+            position: fixed;
+            height: 100%;
+        }
+        #page-content {
+            margin-left: 250px;
+            width: calc(100% - 250px);
+            padding: 1rem;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <div id="db-wrapper">
+        <!-- Sidebar -->
+        <!-- navbar vertical -->
+     <nav class="navbar-vertical navbar">
+        <div class="vh-100" data-simplebar>
+            <!-- Brand logo -->
+            <a class="navbar-brand" href="https://codescandy.com/geeks-bootstrap-5/index.html">
+                <img src="https://codescandy.com/geeks-bootstrap-5/assets/images/brand/logo/logo-inverse.svg"
+                    alt="">
+            </a>
+            <!-- Navbar nav -->
+            <ul class="navbar-nav flex-column" id="sideNavbar">
+
+
+
+
+                <!-- Nav item User -->
+
+                <li class="nav-item">
+                    <a class="nav-link " href="#">
+                        <i class="fas fa-user" style="font-size:24px"></i>
+                        </i> User
+                    </a>
+
+                </li>
+
+
+
+
+
+                <!-- Nav item Orders -->
+                <li class="nav-item">
+                    <a class="nav-link " href="order.html">
+                        <i class='fas fa-receipt' style='font-size:24px'></i>
+                        </i> &nbsp; &nbsp;Orders
+
+                    </a>
+                </li>
+
+
+
+
+
+
+
+                <!-- Nav item Categories -->
+
+                <li class="nav-item">
+                    <a class="nav-link   collapsed " href="#" data-bs-toggle="collapse"
+                        data-bs-target="#navDashboard" aria-expanded="false" aria-controls="navDashboard">
+                        <i class="fas fa-th-large" style="font-size:24px"></i>
+                        &nbsp; Categories
+                    </a>
+                    <div id="navDashboard" class="collapse " data-bs-parent="#sideNavbar">
+                        <ul class="nav flex-column">
+                            <li class="nav-item ">
+                                <a class="nav-link " href="Categories_Bassam/addCategory.html">
+                                    Add Category
+                                </a>
+                            </li>
+                            <!-- Nav item -->
+                            <li class="nav-item ">
+                                <a class="nav-link " href="Categories_Bassam/addCategory.html">
+                                    View ALL Categories
+
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+
+
+
+
+
+                <!-- Nav item Products -->
+
+                <li class="nav-item">
+                    <a class="nav-link   collapsed " href="#" data-bs-toggle="collapse"
+                        data-bs-target="#navDashboard" aria-expanded="false" aria-controls="navDashboard">
+                        <i class="fas fa-box" style="font-size:24px"></i>
+                        &nbsp; Products
+                    </a>
+                    <div id="navDashboard" class="collapse " data-bs-parent="#sideNavbar">
+                        <ul class="nav flex-column">
+                            <li class="nav-item ">
+                                <a class="nav-link " href="Categories_Bassam/Add-product.html">
+                                    Add Products
+                                </a>
+                            </li>
+                            <!-- Nav item -->
+                            <li class="nav-item ">
+                                <a class="nav-link " href="admin-products.html">
+                                    View ALL Products
+
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+
+
+                <!-- Nav item Comment -->
+                <li class="nav-item">
+                    <a class="nav-link " href="Comment.html">
+                        <i class="fas fa-comment" style="font-size:24px"></i>
+
+                        </i> &nbsp; &nbsp;Comments
+
+                    </a>
+                </li>
+<!-- Nav item Contact Us -->
+<li class="nav-item">
+    <a class="nav-link " href="contact.html">
+        <i class="fas fa-comment" style="font-size:24px"></i>
+
+        </i> &nbsp; &nbsp;Contact Us
+
+    </a>
+</li>
+
+                <!-- Nav item Coupons -->
+                <li class="nav-item">
+                    <a class="nav-link " href="Coupon Management.html">
+                        <i class="fas fa-tags" style="font-size:24px"></i>
+                        &nbsp; Coupons
+
+                    </a>
+                </li>
+
+
+
+                <!-- Nav item  Chat-->
+                <li class="nav-item">
+                    <a class="nav-link " href="chat.html">
+                        <i class="nav-icon fe fe-message-square me-2"></i> Chat
+    
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+
+
+    </nav>
+
+        <!-- Page content -->
+        <div id="page-content">
+            <div class="container-fluid">
+                <div class="d-flex justify-content-between align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Products</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Products</li>
+                        </ol>
+                    </nav>
+                    <a href="/User/Templete-Pages/Add-product.html" class="btn btn-primary">Add Product</a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th>Price with Discount</th>
+                                <th>Category</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productList">
+                            <!-- Dynamic product rows will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            let categoriesMap = {};
+
+            fetch('https://localhost:7000/api/Categories')
+                .then(response => response.json())
+                .then(categories => {
+                    categories.forEach(category => {
+                        categoriesMap[category.categoryId] = category.name;
+                    });
+                    return fetch('https://localhost:7000/api/Products');
+                })
+                .then(response => response.json())
+                .then(products => {
+                    const productList = $('#productList');
+                    products.forEach(product => {
+                        const productHTML = `
+                            <tr>
+                                <td><img src="../../../../../../../../Back-End/E-Commerce/E-Commerce/Images/${product.image}" alt="${product.name}" style="width: 50px; height: auto;"> ${product.name}</td>
+                                <td>$${product.price}</td>
+                                 <td>${product.priceWithDiscount ? `$${product.priceWithDiscount}` : '-'}</td>
+                                <td>${categoriesMap[product.categoryId] || 'N/A'}</td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-secondary" onclick="editProduct(${product.productId})">Edit</button>
+                                    <button class="btn btn-sm btn-outline-danger" onclick="deleteProduct(${product.productId})">Delete</button>
+                                </td>
+                            </tr>
+                        `;
+                        productList.append(productHTML);
+                    });
+                })
+                .catch(error => {
+                    console.error('Failed to fetch data:', error);
+                    productList.html('<tr><td colspan="5">Error loading products.</td></tr>');
+                });
+        });
+
+        function editProduct(productId) {
+            localStorage.setItem('productId', productId);  // Store the product ID in localStorage
+            window.location.href = 'editProduct.html';     // Navigate to the edit page
+        }
+
+        function deleteProduct(productId) {
+            if (confirm("Are you sure you want to delete this product?")) {
+                fetch(`https://localhost:7000/api/Products/${productId}`, {
+                    method: 'DELETE'
+                })
+                .then(response => {
+                    if (!response.ok) throw new Error('Failed to delete the product');
+                    alert('Product deleted successfully!');
+                    location.reload();
+                })
+                .catch(error => {
+                    console.error('Error deleting product:', error);
+                    alert('Failed to delete product: ' + error.message);
+                });
+            }
+        }
+    </script>
+</body>
+</html>

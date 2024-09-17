@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <meta property="og:title" content="Discover the Products of Fima!" />
+    <meta
+      property="og:description"
+      content="Explore a wide range of delicious products from Sugarland. Don't miss out on our latest offerings!"
+    />
+    <meta
+      property="og:url"
+      content="https://websitedemos.net/clothing-store-02/?customize=template"
+    />
+
+    <meta
+      property="og:image"
+      content="https://example.com/path/to/your/image.jpg"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Fima" />
+    <meta property="fb:app_id" content="518338684519042" />
+
+</head>
+<body>
+    <button onclick="ShareOnFacebook()">Click Here</button>
+
+
+    <script    async 
+    defer
+    crossorigin="anonymous"
+    src="https://connect.facebook.net/en_US/sdk.js">
+   
+    </script>
+
+    <script>
+        window.fbAsyncInit = function () {
+        FB.init({
+          appId: "518338684519042", // Replace with your actual Facebook App ID
+          cookie: true,
+          xfbml: true,
+          version: "v15.0", // Replace with the latest Facebook API version
+        });
+      };
+      
+        function ShareOnFacebook() {
+            FB.ui({
+  method: 'share',
+  href: 'https://websitedemos.net/clothing-store-02/?customize=template'
+}, function(response){});
+        }
+
+    </script>
+</body>
+</html>

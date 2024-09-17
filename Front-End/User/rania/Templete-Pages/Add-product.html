@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">My Store</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="categories.html">Categories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="all-products.html">Products</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2>Add New Product</h2>
+        <form id="addProductForm" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="Name">Product Name</label>
+                <input type="text" class="form-control" id="Name" name="Name" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" name="description" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" class="form-control" id="price" name="price" required>
+            </div>
+            <div class="form-group">
+                <label for="priceWithDiscount">Price with Discount</label>
+                <input type="number" class="form-control" id="priceWithDiscount" name="priceWithDiscount">
+            </div>
+            <div class="form-group">
+                <label for="color">Color</label>
+                <select class="form-control" id="color" name="color" onchange="updateFlowerColorId()">
+                    <option value="">Select a Color</option>
+                    <option value="1">Red</option>
+                    <option value="2">White</option>
+                    <option value="3">Pink</option>
+                    <option value="4">Yellow</option>
+                    <option value="5">Mixed</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="hidden" class="form-control" id="flowerColorId" name="flowerColorId">
+            </div>
+            <div class="form-group">
+                <label for="categoryId">Category</label>
+                <select class="form-control" id="categoryId" name="categoryId" required>
+                    <option value="">Select a Category</option>
+                    <!-- Categories will be populated here by JavaScript -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Image">Product Image</label>
+                <input type="file" class="form-control-file" id="Image" name="Image">
+            </div>
+            <button type="submit" class="btn btn-primary">Save Product</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('https://localhost:7000/api/Categories')
+                .then(response => response.json())
+                .then(categories => {
+                    const categoryDropdown = document.getElementById('categoryId');
+                    categories.forEach(category => {
+                        const option = document.createElement('option');
+                        option.value = category.categoryId;
+                        option.textContent = category.name;
+                        categoryDropdown.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error fetching categories:', error));
+        });
+
+        document.getElementById('addProductForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            formData.append('FlowerColorId', document.getElementById('flowerColorId').value);
+
+            fetch('https://localhost:7000/api/Products', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Product added successfully!');
+                window.location.href = 'shop.html';
+            })
+            .catch(error => console.error('Error adding product:', error));
+        });
+
+        function updateFlowerColorId() {
+            var colorDropdown = document.getElementById('color');
+            var flowerColorId = document.getElementById('flowerColorId');
+            flowerColorId.value = colorDropdown.value; // Set the flower color ID based on the selected color
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

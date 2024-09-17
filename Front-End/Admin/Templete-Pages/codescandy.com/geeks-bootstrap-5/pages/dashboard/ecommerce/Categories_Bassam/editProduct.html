@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from codescandy.com/geeks-bootstrap-5/pages/dashboard/ecommerce/add-product.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Sep 2024 16:29:45 GMT -->
+<head>  <!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="Codescandy">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M8S4MT3EYG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M8S4MT3EYG');
+</script>
+
+
+
+<script>
+    // Render blocking JS:
+    if (localStorage.theme) document.documentElement.setAttribute("data-theme", localStorage.theme);
+    </script>
+
+<!-- Favicon icon-->
+<link rel="shortcut icon" type="image/x-icon" href="https://codescandy.com/geeks-bootstrap-5/assets/images/favicon/favicon.ico">
+
+
+<!-- Libs CSS -->
+<link href="../../../../assets/fonts/feather/feather.css" rel="stylesheet">
+<link href="../../../../assets/libs/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+<link href="../../../../assets/libs/%40mdi/font/css/materialdesignicons.min.css" rel="stylesheet" />
+<link href="../../../../assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet">
+
+
+
+
+<!-- Theme CSS -->
+<link rel="stylesheet" href="../../../../assets/css/theme.min.css">
+
+  <link href="../../../../assets/libs/dropzone/dist/dropzone.css" rel="stylesheet" >
+  <link href="../../../../assets/libs/%40yaireo/tagify/dist/tagify.css" rel="stylesheet">
+  <title>Add Product | Geeks - Academy Admin Template</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+  <!-- Wrapper -->
+  <div id="db-wrapper">
+    <!-- navbar vertical -->
+     <!-- Sidebar -->
+ <!-- navbar vertical -->
+ <nav class="navbar-vertical navbar">
+    <div class="vh-100" data-simplebar>
+        <!-- Brand logo -->
+        <a class="navbar-brand" href="https://codescandy.com/geeks-bootstrap-5/index.html">
+            <img src="https://codescandy.com/geeks-bootstrap-5/assets/images/brand/logo/logo-inverse.svg"
+                alt="">
+        </a>
+        <!-- Navbar nav -->
+        <ul class="navbar-nav flex-column" id="sideNavbar">
+
+
+
+
+            <!-- Nav item User -->
+
+            <li class="nav-item">
+                <a class="nav-link " href="../Users.html">
+                    <i class="fas fa-user" style="font-size:24px"></i>
+                    </i> User
+                </a>
+
+            </li>
+
+
+
+
+
+            <!-- Nav item Orders -->
+            <li class="nav-item">
+                <a class="nav-link " href="../order.html">
+                    <i class='fas fa-receipt' style='font-size:24px'></i>
+                    </i> &nbsp; &nbsp;Orders
+
+                </a>
+            </li>
+
+
+
+
+
+
+
+            <!-- Nav item Categories -->
+
+            <li class="nav-item">
+                <a class="nav-link   collapsed " href="#" data-bs-toggle="collapse"
+                    data-bs-target="#navDashboard" aria-expanded="false" aria-controls="navDashboard">
+                    <i class="fas fa-th-large" style="font-size:24px"></i>
+                    &nbsp; Categories
+                </a>
+                <div id="navDashboard" class="collapse " data-bs-parent="#sideNavbar">
+                    <ul class="nav flex-column">
+                        <li class="nav-item ">
+                            <a class="nav-link " href="addCategory.html">
+                                Add Category
+                            </a>
+                        </li>
+                        <!-- Nav item -->
+                        <li class="nav-item ">
+                            <a class="nav-link " href="categories.html">
+                                View ALL Categories
+
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+
+
+
+
+
+            <!-- Nav item Products -->
+
+            <li class="nav-item">
+                <a class="nav-link   collapsed " href="#" data-bs-toggle="collapse"
+                    data-bs-target="#navDashboard" aria-expanded="false" aria-controls="navDashboard">
+                    <i class="fas fa-box" style="font-size:24px"></i>
+                    &nbsp; Products
+                </a>
+                <div id="navDashboard" class="collapse " data-bs-parent="#sideNavbar">
+                    <ul class="nav flex-column">
+                        <li class="nav-item ">
+                            <a class="nav-link " href="../Add-product.html">
+                                Add Products
+                            </a>
+                        </li>
+                        <!-- Nav item -->
+                        <li class="nav-item ">
+                            <a class="nav-link " href="../admin-products.html">
+                                View ALL Products
+
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+
+
+            <!-- Nav item Comment -->
+            <li class="nav-item">
+                <a class="nav-link " href="../Comment.html">
+                    <i class="fas fa-comment" style="font-size:24px"></i>
+
+                    </i> &nbsp; &nbsp;Comments
+
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="../contact.html">
+                    <i class="fas fa-comment" style="font-size:24px"></i>
+
+                    </i> &nbsp; &nbsp;Contact Us
+
+                </a>
+            </li>
+
+
+            <!-- Nav item Coupons -->
+            <li class="nav-item">
+                <a class="nav-link " href="../Coupon Management.html">
+                    <i class="fas fa-tags" style="font-size:24px"></i>
+                    &nbsp; Coupons
+
+                </a>
+            </li>
+
+
+
+            <!-- Nav item  Chat-->
+            <li class="nav-item">
+                <a class="nav-link " href="../chat.html">
+                    <i class="nav-icon fe fe-message-square me-2"></i> Chat
+
+                </a>
+            </li>
+
+        </ul>
+    </div>
+
+
+</nav>
+<div id="page-content">
+    <div class="header">
+        <!-- Navbar here as copied from the provided template -->
+        <nav class="navbar-default navbar navbar-expand-lg">
+            <!-- Navbar content here -->
+        </nav>
+    </div>
+    <!-- Container fluid -->
+    <div class="container-fluid p-4">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-12">
+                <!-- Page header -->
+                <div class="border-bottom pb-3 mb-3 ">
+                    <h1 class="mb-0 h2 fw-bold">Edit Product</h1>
+                    <!-- Breadcrumb -->
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="../admin-dashboard.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Edit Product</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- Form to edit product -->
+        <form id="editProductForm" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="productName">Product Name</label>
+                <input type="text" class="form-control" id="productName" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" name="description" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" class="form-control" id="price" name="price" required>
+            </div>
+            <div class="form-group">
+                <label for="priceWithDiscount">Price with Discount</label>
+                <input type="number" class="form-control" id="priceWithDiscount" name="priceWithDiscount">
+            </div>
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select class="form-control" id="category" name="categoryId" required>
+                    <!-- Categories will be populated here dynamically -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="color">Color</label>
+                <select class="form-control" id="color" name="color" required>
+                    <option value="">Select a Color</option>
+                    <option value="">Select a Color</option>
+                    <option value="1">Red</option>
+                    <option value="2">White</option>
+                    <option value="3">Pink</option>
+                    <option value="4">Yellow</option>
+                    <option value="5">Mixed</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="productImage">Product Image</label>
+                <input type="file" class="form-control-file" id="productImage" name="image">
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+    </div>
+</div>
+
+
+
+  <!-- Scripts -->
+  <script src="../../../../assets/libs/%40yaireo/tagify/dist/tagify.min.js"></script>
+  <!-- Libs JS -->
+<script src="../../../../assets/libs/jquery/dist/jquery.min.js"></script>
+<script src="../../../../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../../../../assets/libs/simplebar/dist/simplebar.min.js"></script>
+
+
+<!-- Theme JS -->
+<script src="../../../../assets/js/theme.min.js"></script>
+
+  <script src="../../../../assets/libs/dropzone/dist/min/dropzone.min.js"></script>
+  <script src="../../../../assets/libs/quill/dist/quill.min.js"></script>
+  <script src="../../../../assets/js/vendors/editor.js"></script>
+
+<script src="../../../../assets/libs/flatpickr/dist/flatpickr.min.js"></script>
+<script src="../../../../assets/js/vendors/flatpickr.js"></script>
+<script src="editcategory.js"></script>
+
+
+
+
+<!--raniascript-->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const productId = localStorage.getItem('productId');
+        if (!productId) {
+            alert('No product ID provided.');
+            return;
+        }
+
+        // Fetch product details and populate form
+        fetch(`https://localhost:7000/api/Products/${productId}`)
+        .then(response => response.json())
+        .then(product => {
+            document.getElementById('productName').value = product.name;
+            document.getElementById('description').value = product.description;
+            document.getElementById('price').value = product.price;
+            document.getElementById('priceWithDiscount').value = product.priceWithDiscount || '';
+            document.getElementById('category').value = product.categoryId;
+            document.getElementById('color').value = product.colorId; // Assuming 'colorId' is part of the fetched product details
+        })
+        .catch(error => console.error('Error fetching product details:', error));
+
+        // Fetch categories and populate the category select
+        fetch('https://localhost:7000/api/Categories')
+        .then(response => response.json())
+        .then(categories => {
+            const categorySelect = document.getElementById('category');
+            categories.forEach(category => {
+                const option = document.createElement('option');
+                option.value = category.categoryId;
+                option.textContent = category.name;
+                categorySelect.appendChild(option);
+            });
+        })
+        .catch(error => console.error('Error fetching categories:', error));
+
+        // Handle form submission
+        document.getElementById('editProductForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+
+            fetch(`https://localhost:7000/api/Products/${productId}`, {
+                method: 'PUT',
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) throw new Error('Failed to update');
+                return response.json();
+            })
+            .then(data => {
+                alert('Product updated successfully!');
+                window.location.href = '../admin-products.html'; // Redirect to the admin products page
+            })
+            .catch(error => {
+                console.error('Error updating product:', error);
+                alert('Failed to update product: ' + error.message);
+            });
+        });
+    });
+</script>
+
+</body>
+
+
+<!-- Mirrored from codescandy.com/geeks-bootstrap-5/pages/dashboard/ecommerce/add-product.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Sep 2024 16:29:48 GMT -->
+</html>

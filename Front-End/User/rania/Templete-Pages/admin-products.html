@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin products</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Product List</h2>
+        <div class="row" id="productList">
+            <!-- Products will be loaded here -->
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            fetch('https://localhost:7000/api/Products')
+                .then(response => response.json())
+                .then(products => {
+                    const productList = $('#productList');
+                    products.forEach(product => {
+                        const productHTML = `
+                            <div class="col-md-4">
+                                <div class="card mb-4 shadow-sm">
+                                    <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="https://localhost:7000${product.image}" alt="${product.name}">
+                                    <div class="card-body">
+                                        <p class="card-text">${product.name} - $${product.price}</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <button type="button" onclick="editProduct(${product.productId})" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                                <button type="button" onclick="deleteProduct(${product.productId})"class="btn btn-sm btn-outline-secondary">Delete</button>
+                                            </div>
+                                            <small class="text-muted">${product.productId}</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        productList.append(productHTML);
+                    });
+                })
+                .catch(error => {
+                    console.error('Failed to fetch products', error);
+                    productList.html('<p>Error loading products.</p>');
+                });
+        });
+
+        function editProduct(productId) {
+            localStorage.setItem('productId', productId);  // Store the product ID in localStorage
+            window.location.href = 'editProduct.html';     // Navigate to the edit page
+        }
+
+
+
+
+
+        function deleteProduct(productId) {
+    if (confirm("Are you sure you want to delete this product?")) {
+        fetch(`https://localhost:7000/api/Products/${productId}`, {
+            method: 'DELETE'
+        })
+        .then(response => {
+            if (!response.ok) throw new Error('Failed to delete the product');
+            alert('Product deleted successfully!');
+            location.reload(); // Reload the page to reflect the changes
+        })
+        .catch(error => {
+            console.error('Error deleting product:', error);
+            alert('Failed to delete product: ' + error.message);
+        });
+    }
+}
+
+
+
+
+
+
+
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

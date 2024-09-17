@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); /* Bright gradient background */
+}
+
+.container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinBtn {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #333;
+  letter-spacing: .1em;
+  border: 6px solid rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.75); /* Glow effect */
+  transition: transform 0.3s; /* Smooth scaling when clicked */
+}
+
+.spinBtn:active {
+  transform: scale(0.9);
+}
+
+.spinBtn::before {
+  content: '';
+  position: absolute;
+  top: -28px;
+  width: 20px;
+  height: 30px;
+  background: #fff;
+  clip-path: polygon(50% 0%, 15% 100%, 85% 100%);
+}
+
+.wheel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #333;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 0 5px #333,
+    0 0 0 15px #fff,
+    0 0 0 18px #111;
+  transition: transform 5s ease-in-out;
+}
+
+.number {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background: var(--clr);
+  transform-origin: bottom right;
+  transform: rotate(calc(45deg * var(--i)));
+  clip-path: polygon(0 0, 56% 0, 100% 100%, 0 56%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+}
+
+.number span {
+  position: relative;
+  transform: rotate(45deg);
+  font-size: 2em;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 3px 5px 2px rgba(0, 0, 0, 0.15);
+}
+
+.number span::after {
+  content: '$';
+  position: absolute;
+  font-size: 0.75em;
+  font-weight: 500;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="spinBtn">spin</div>
+        <div class="wheel">
+          <div class="number" style="--i:1;--clr:#db7093"><span>1</span></div>
+          <div class="number" style="--i:2;--clr:#20b2aa"><span>5</span></div>
+          <div class="number" style="--i:3;--clr:#d63e92"><span>7</span></div>
+          <div class="number" style="--i:4;--clr:#daa520"><span>9</span></div>
+          <div class="number" style="--i:5;--clr:#ff34f0"><span>4</span></div>
+          <div class="number" style="--i:6;--clr:#ff7f50"><span>2</span></div>
+          <div class="number" style="--i:7;--clr:#3cb371"><span>10</span></div>
+          <div class="number" style="--i:8;--clr:#4169e1"><span>20</span></div>
+        </div>
+      </div>
+</body>
+
+<script>
+    let wheel = document.querySelector('.wheel');
+    let spinBtn = document.querySelector('.spinBtn');
+    let degrees = 0;
+    const totalSegments = 8; // Since you have 8 segments
+    const degreesPerSegment = 360 / totalSegments;
+
+    spinBtn.onclick = async function() {
+        let spins = Math.ceil(Math.random() * 3600); // Random spin amount
+        degrees += spins;
+        wheel.style.transition = 'transform 5s ease-out'; // Smooth deceleration
+        wheel.style.transform = `rotate(${degrees}deg)`;
+
+        await new Promise(resolve => setTimeout(resolve, 5000)); // Wait for animation to finish
+
+        let normalizedDegrees = degrees % 360; // Normalize degrees to [0, 360)
+        let adjustedDegrees = (360 - normalizedDegrees + (degreesPerSegment / 2)) % 360; // Adjust by half a segment width to center on segment
+        let prizeIndex = Math.floor(adjustedDegrees / degreesPerSegment); // Adjust prize index calculation
+        let prizeElements = document.querySelectorAll('.wheel .number span');
+        let prizeValue = parseInt(prizeElements[prizeIndex].textContent, 10); // Get the integer value from the span
+
+        console.log(`Degrees: ${normalizedDegrees}, Prize Index: ${prizeIndex}, Prize: ${prizeValue}`); // Debug output
+
+        localStorage.setItem("wheelPrize", prizeValue);
+        alert(`You won $${prizeValue}!`);
+        window.location.href = "checkout.html"
+
+        // Optionally, apply the prize directly to the order total
+        applyPrizeToOrder(prizeValue);
+    };
+
+    // function applyPrizeToOrder(prize) {
+    //     let totalAmount = parseFloat(localStorage.getItem("totalAmountToPay"));
+    //     totalAmount -= prize;
+    //     localStorage.setItem("totalAmountToPay", totalAmount.toFixed(2));
+    //     document.getElementById("orderTotal").textContent = `$${totalAmount.toFixed(2)}`;
+    // }
+</script>
+
+
+
+</html>

@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>E_Commerce</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MailKit" Version="4.7.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="MimeKit" Version="4.7.1" />
+    <PackageReference Include="PayPal" Version="1.9.1" />
+    <PackageReference Include="Serilog.AspNetCore" Version="8.0.2" />
+    <PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\uploads\images\1.png" />
+    <None Include="wwwroot\uploads\images\12.png" />
+    <None Include="wwwroot\uploads\images\156018fe-91d2-43db-8d7f-71ea05575a51.jpg" />
+    <None Include="wwwroot\uploads\images\18e3b78a-c0e1-4959-9082-f2170380870c.jpg" />
+    <None Include="wwwroot\uploads\images\2.png" />
+    <None Include="wwwroot\uploads\images\3.png" />
+    <None Include="wwwroot\uploads\images\4 %281%29.png" />
+    <None Include="wwwroot\uploads\images\4.png" />
+    <None Include="wwwroot\uploads\images\5.png" />
+    <None Include="wwwroot\uploads\images\52d65652-80c4-4720-9364-c4bd2e9b0c96.jpg" />
+    <None Include="wwwroot\uploads\images\6.png" />
+    <None Include="wwwroot\uploads\images\7.png" />
+    <None Include="wwwroot\uploads\images\8.png" />
+    <None Include="wwwroot\uploads\images\a1abe3c5-3f70-49f6-9f84-1d7198a890f3.jpg" />
+    <None Include="wwwroot\uploads\images\b56fddf3-fc32-41da-a5c6-606f6d3fd17d.jpg" />
+  </ItemGroup>
+
+</Project>
